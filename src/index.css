@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+table {
+  border-spacing: 30px;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+tr:nth-child(even) {
+  background: rgba(136, 148, 160, 0.1);
+}
+tr:nth-child(odd) {
+  background: #fff;
+}

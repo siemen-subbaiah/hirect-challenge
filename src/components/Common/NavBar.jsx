@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <nav className='bg-black text-white flex items-center justify-between p-3'>
-      <div className='flex items-center gap-2 ml-2 cursor-pointer'>
-        <Link to='/'>
+      <Link to='/'>
+        <div className='flex items-center gap-2 ml-2 cursor-pointer'>
           <div className='bg-[#ED357E] pl-[0.65rem] pr-[0.65rem] py-1 rounded-full'>
             <p>f1</p>
           </div>
-        </Link>
-        <h1 className='text-xl font-semibold'>studioz</h1>
-      </div>
+          <h1 className='text-xl font-semibold'>studioz</h1>
+        </div>
+      </Link>
       <div className='flex gap-7 items-center mr-5 cursor-pointer'>
         <MdApps color='#525960' size='1.7rem' />
         <MdNotifications color='#525960' size='1.5rem' />

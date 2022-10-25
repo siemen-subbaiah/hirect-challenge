@@ -1,6 +1,16 @@
 import React from 'react';
+import { IoMdArrowBack } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
-const Header = ({ tabs, setIndex, index }) => {
+const Header = ({
+  tabs,
+  setIndex,
+  index,
+  create,
+  configure,
+  configNumb,
+  setConfigNumb,
+}) => {
   return (
     <header className='bg-[#34495E] text-white p-3'>
       {tabs && (
@@ -21,6 +31,35 @@ const Header = ({ tabs, setIndex, index }) => {
           >
             FAVORITES
           </h1>
+        </div>
+      )}
+      {create && (
+        <div className='flex items-center gap-4'>
+          <Link to='/' className='cursor-pointer'>
+            <IoMdArrowBack size='1.3rem' />
+          </Link>
+          <p>Create a new order</p>
+        </div>
+      )}
+      {configure && (
+        <div className='flex items-center gap-4'>
+          {configNumb === 2 ? (
+            <>
+              <Link to='/create'>
+                <IoMdArrowBack size='1.3rem' className='cursor-pointer' />
+              </Link>
+              <p>Configure a new door</p> {configNumb} of 3
+            </>
+          ) : (
+            <>
+              <IoMdArrowBack
+                size='1.3rem'
+                onClick={() => setConfigNumb(2)}
+                className='cursor-pointer'
+              />
+              <p>Configure a new door</p> {configNumb} of 3
+            </>
+          )}
         </div>
       )}
     </header>

@@ -7,14 +7,14 @@ const HomePage = () => {
   const [tableIndex, setTableIndex] = useState(0);
 
   return (
-    <div className='bg-[#F6F8FA] h-screen'>
+    <>
       <Header tabs index={index} setIndex={setIndex} />
       <div className='px-4'>
         <TableHeader tableIndex={tableIndex} setTableIndex={setTableIndex} />
         <hr />
       </div>
       {index === 0 && tableIndex === 0 ? <Table /> : <Nodata />}
-    </div>
+    </>
   );
 };
 

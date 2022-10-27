@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiFilter } from 'react-icons/bi';
 
-const TableHeader = ({ tableIndex, setTableIndex }) => {
+const TableHeader = ({ term, tableIndex, setTableIndex, handleSearch }) => {
   return (
     <section className='p-4 flex items-center justify-between'>
       <div className='flex items-center gap-5'>
@@ -26,6 +26,8 @@ const TableHeader = ({ tableIndex, setTableIndex }) => {
       <div className='flex items-center gap-5'>
         <div className='bg-white flex items-center gap-2 border rounded-sm'>
           <input
+            ref={term}
+            onChange={handleSearch}
             type='text'
             className='p-2 outline-none bg-white w-20'
             placeholder='Search'

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppState';
 
 const FirstConfig = ({ setConfigNumb }) => {
+  const {
+    data: { category, series, doorType },
+    updateDropDowns,
+  } = useContext(AppContext);
+
   return (
     <div className='bg-white shadow-sm rounded-md mt-3 p-3 h-[80vh] relative'>
       <form>
@@ -8,29 +14,46 @@ const FirstConfig = ({ setConfigNumb }) => {
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Select Category
           </label>
-          <select name='category' className='border w-1/3 p-2 rounded-sm'>
-            <option value='category'>Residential Door</option>
-            <option value='category'>Industrial Door</option>
+          <select
+            name='category'
+            value={category}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='Residential Door'>Residential Door</option>
+            <option value='Industrial Door'>Industrial Door</option>
           </select>
         </div>
         <div className='flex items-center justify-around my-5'>
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Select Series
           </label>
-          <select name='category' className='border w-1/3 p-2 rounded-sm'>
-            <option value='category'>Canyon Ridge Collection</option>
-            <option value='category'>Uday Collections</option>
-            <option value='category'>Siemen Collections</option>
+          <select
+            name='series'
+            value={series}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='Canyon Ridge Collection'>
+              Canyon Ridge Collection
+            </option>
+            <option value='Uday Collections'>Uday Collections</option>
+            <option value='Siemen Collections'>Siemen Collections</option>
           </select>
         </div>
         <div className='flex items-center justify-around my-5'>
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Door Type
           </label>
-          <select name='category' className='border w-1/3 p-2 rounded-sm'>
-            <option value='category'>CAN212</option>
-            <option value='category'>CAN341</option>
-            <option value='category'>CAN872</option>
+          <select
+            name='doorType'
+            value={doorType}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='CAN212'>CAN212</option>
+            <option value='CAN341'>CAN341</option>
+            <option value='CAN872'>CAN872</option>
           </select>
         </div>
       </form>

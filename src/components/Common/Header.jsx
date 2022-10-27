@@ -10,6 +10,7 @@ const Header = ({
   configure,
   configNumb,
   setConfigNumb,
+  cart,
 }) => {
   return (
     <header className='bg-[#34495E] text-white p-3'>
@@ -60,6 +61,14 @@ const Header = ({
               <p>Configure a new door</p> {configNumb} of 3
             </>
           )}
+        </div>
+      )}
+      {cart && (
+        <div className='flex gap-4 items-center'>
+          <Link to='/configure'>
+            <IoMdArrowBack size='1.3rem' className='cursor-pointer' />
+          </Link>
+          <p>Cart page</p>
         </div>
       )}
     </header>

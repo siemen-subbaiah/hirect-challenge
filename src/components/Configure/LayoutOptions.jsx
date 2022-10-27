@@ -1,6 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppState';
 
-const LayoutOptions = () => {
+const LayoutOptions = ({ fuck }) => {
+  const {
+    data: { assemblyType, wInch, wFeet, hFeet, hInch, windCode, design, color },
+    updateDropDowns,
+  } = useContext(AppContext);
+
   return (
     <section className='bg-white shadow-md my-3'>
       <header className='p-2 bg-[#E4E4E4] text-[#34495E] font-bold'>
@@ -11,9 +18,14 @@ const LayoutOptions = () => {
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Assembly Type
           </label>
-          <select name='layout' className='border w-1/3 p-2 rounded-sm'>
-            <option value='layout'>Complete Door</option>
-            <option value='layout'>Half Door</option>
+          <select
+            name='assemblyType'
+            value={assemblyType}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='Complete Door'>Complete Door</option>
+            <option value='Half Door'>Half Door</option>
           </select>
         </div>
         <div className='flex items-center justify-around my-3'>
@@ -26,15 +38,25 @@ const LayoutOptions = () => {
                 Width
               </label>
               <div className='flex gap-2'>
-                <select name='layout' className='border p-2 rounded-sm w-36'>
-                  <option value='layout'>8ft</option>
-                  <option value='layout'>9ft</option>
-                  <option value='layout'>10ft</option>
+                <select
+                  name='wFeet'
+                  value={wFeet}
+                  onChange={updateDropDowns}
+                  className='border p-2 rounded-sm w-36'
+                >
+                  <option value='8ft'>8ft</option>
+                  <option value='9ft'>9ft</option>
+                  <option value='10ft'>10ft</option>
                 </select>
-                <select name='layout' className='border p-2 rounded-sm w-36'>
-                  <option value='layout'>2 in.</option>
-                  <option value='layout'>3 in.</option>
-                  <option value='layout'>4 in.</option>
+                <select
+                  name='wInch'
+                  value={wInch}
+                  onChange={updateDropDowns}
+                  className='border p-2 rounded-sm w-36'
+                >
+                  <option value='2 in.'>2 in.</option>
+                  <option value='3 in.'>3 in.</option>
+                  <option value='4 in.'>4 in.</option>
                 </select>
               </div>
             </div>
@@ -43,15 +65,25 @@ const LayoutOptions = () => {
                 Height
               </label>
               <div className='flex gap-2'>
-                <select name='layout' className='border p-2 rounded-sm w-36'>
-                  <option value='layout'>6ft</option>
-                  <option value='layout'>5ft</option>
-                  <option value='layout'>4ft</option>
+                <select
+                  name='hFeet'
+                  value={hFeet}
+                  onChange={updateDropDowns}
+                  className='border p-2 rounded-sm w-36'
+                >
+                  <option value='6ft'>6ft</option>
+                  <option value='5ft'>5ft</option>
+                  <option value='4ft'>4ft</option>
                 </select>
-                <select name='layout' className='border p-2 rounded-sm w-36'>
-                  <option value='layout'>0 in.</option>
-                  <option value='layout'>1 in.</option>
-                  <option value='layout'>2 in.</option>
+                <select
+                  name='hInch'
+                  value={hInch}
+                  onChange={updateDropDowns}
+                  className='border p-2 rounded-sm w-36'
+                >
+                  <option value='0 in.'>0 in.</option>
+                  <option value='1 in.'>1 in.</option>
+                  <option value='2 in.'>2 in.</option>
                 </select>
               </div>
             </div>
@@ -61,28 +93,43 @@ const LayoutOptions = () => {
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Windcode
           </label>
-          <select name='layout' className='border w-1/3 p-2 rounded-sm'>
-            <option value='layout'>Windcode W1</option>
-            <option value='layout'>Windcode W2</option>
+          <select
+            name='windCode'
+            value={windCode}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='Windcode W1'>Windcode W1</option>
+            <option value='Windcode W2'>Windcode W2</option>
           </select>
         </div>
         <div className='flex items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Design
           </label>
-          <select name='layout' className='border w-1/3 p-2 rounded-sm'>
-            <option value='layout'>CC</option>
-            <option value='layout'>DD</option>
-            <option value='layout'>PP</option>
+          <select
+            name='design'
+            value={design}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='CC'>CC</option>
+            <option value='DD'>DD</option>
+            <option value='PP'>PP</option>
           </select>
         </div>
         <div className='flex items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Color
           </label>
-          <select name='layout' className='border w-1/3 p-2 rounded-sm'>
-            <option value='layout'>Dark Finish</option>
-            <option value='layout'>Lite Finish</option>
+          <select
+            name='color'
+            value={color}
+            onChange={updateDropDowns}
+            className='border w-1/3 p-2 rounded-sm'
+          >
+            <option value='Dark Finish'>Dark Finish</option>
+            <option value='Lite Finish'>Lite Finish</option>
           </select>
         </div>
       </div>

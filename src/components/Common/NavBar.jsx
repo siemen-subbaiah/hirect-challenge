@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdApps, MdNotifications } from 'react-icons/md';
 import { FaQuestionCircle } from 'react-icons/fa';
+import { BsFillCartFill } from 'react-icons/bs';
 import avatar from '../../images/avatar.png';
 import { Link } from 'react-router-dom';
 
@@ -27,6 +28,13 @@ const NavBar = () => {
           size='1.4rem'
           className='hidden md:block'
         />
+        <Link to='/cart'>
+          <BsFillCartFill
+            color='#525960'
+            size='1.5rem'
+            className='hidden md:block'
+          />
+        </Link>
         <img src={avatar} height={28} width={28} alt='avatar' />
       </div>
     </nav>

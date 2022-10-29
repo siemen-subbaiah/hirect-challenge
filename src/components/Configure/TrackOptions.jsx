@@ -12,7 +12,7 @@ const TrackOptions = () => {
         Track Options
       </header>
       <div className='p-3'>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Spring
           </label>
@@ -20,14 +20,14 @@ const TrackOptions = () => {
             name='spring'
             value={spring}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Galvanized Torsion'>Galvanized Torsion</option>
             <option value='Another Torsion'>Another Torsion</option>
           </select>
         </div>
 
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Track Size
           </label>
@@ -35,7 +35,7 @@ const TrackOptions = () => {
             name='trackSize'
             value={trackSize}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='2" Flag & Jamb Brackets Loose'>
               2" Flag & Jamb Brackets Loose
@@ -45,7 +45,7 @@ const TrackOptions = () => {
             </option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Track Mount
           </label>
@@ -53,13 +53,13 @@ const TrackOptions = () => {
             name='trackMount'
             value={trackMount}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Bracket'>Bracket</option>
             <option value='Windoes'>Windoes</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Track Lift
           </label>
@@ -67,13 +67,13 @@ const TrackOptions = () => {
             name='trackLift'
             value={trackLift}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Standard'>Standard</option>
             <option value='Premium'>Premium</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Track Radius
           </label>
@@ -81,7 +81,7 @@ const TrackOptions = () => {
             name='trackRadius'
             value={trackRadius}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='12" Radius'>12" Radius</option>
             <option value='14" Radius'>14" Radius</option>

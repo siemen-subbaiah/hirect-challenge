@@ -28,8 +28,8 @@ const ProductCart = () => {
             <p className='text-[#8894A0]'>
               Availability: IN STOCK (Available for Pickup)
             </p>
-            <div className='my-5 flex items-center justify-between'>
-              <div className='flex gap-3'>
+            <div className='my-5 flex flex-col md:flex-row md:items-center justify-between'>
+              <div className='flex gap-3 md:mb-0 mb-2'>
                 <button
                   onClick={() => decreaseItem(item?.id)}
                   className='bg-[#F6F8FA] px-3 py-1 border border-[#8894A0]'
@@ -54,24 +54,25 @@ const ProductCart = () => {
               </div>
             </div>
 
-            <div className='my-3 flex w-full'>
-              <button className='border pl-[6.8rem] pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'>
+            <div className='my-3 flex w-full flex-col md:flex-row items-center'>
+              <button className='w-full border md:pl-[6.8rem] md:pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center justify-center gap-1'>
                 <AiFillHeart />
                 <span>FAVORITES</span>
               </button>
-              <Link to={`/configure?edit=${item?.id}`}>
-                <button className='border pl-[6.8rem] pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'>
-                  <MdEdit />
-                  <span>EDIT</span>
-                </button>
+              <Link
+                className='w-full justify-center border md:pl-[6.8rem] md:pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'
+                to={`/configure?edit=${item?.id}`}
+              >
+                <MdEdit />
+                <span>EDIT</span>
               </Link>
-              <button className='border pl-[6.8rem] pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'>
+              <button className='w-full justify-center border md:pl-[6.8rem] md:pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'>
                 <RiFileCopyFill />
                 <span>COPY</span>
               </button>
               <button
                 onClick={() => deleteItem(item?.id)}
-                className='border pl-[6.8rem] pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'
+                className='w-full justify-center border md:pl-[6.8rem] md:pr-[6.8rem] py-2 cursor-pointer text-[#66332B] flex items-center gap-1'
               >
                 <MdDelete />
                 <span>DELETE</span>

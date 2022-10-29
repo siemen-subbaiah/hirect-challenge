@@ -8,64 +8,79 @@ const Table = ({ filteredProducts, handleSeriesSort1, handleSeriesSort2 }) => {
   const [toggle, setToggle] = useState(true);
 
   return (
-    <section className='flex justify-center my-5 px-3 overflow-x-auto relative rounded-2xl'>
-      <table className='shadow-md w-full'>
-        <tbody>
-          <tr>
-            <td className='text-[#8894A0] cursor-pointer'>
-              PRODUCT INFORMATION
-            </td>
-            <td className='text-[#8894A0]'>COLOR</td>
-            <td className='text-[#8894A0] flex items-center gap-2'>
-              <span>SERIES</span>
-              {toggle ? (
-                <AiOutlineArrowDown
-                  onClick={() => {
-                    handleSeriesSort1();
-                    setToggle(!toggle);
-                  }}
-                  size='1rem'
-                  className='cursor-pointer'
-                />
-              ) : (
-                <AiOutlineArrowUp
-                  onClick={() => {
-                    handleSeriesSort2();
-                    setToggle(!toggle);
-                  }}
-                  size='1rem'
-                  className='cursor-pointer'
-                />
-              )}
-            </td>
-            <td className='text-[#8894A0]'>WINDCODE</td>
-            <td className='text-[#8894A0]'>CATEGORY</td>
-            <td className='text-[#8894A0]'>TRACK LIFT</td>
-          </tr>
-          {filteredProducts?.map((item) => {
-            return (
+    <>
+      {filteredProducts?.length === 0 ? (
+        <section className='text-center p-3'>
+          <h1 className='text-2xl'> No purchases made yet</h1>
+          <Link to='/create'>
+            <button className='my-3 bg-[#66332B] text-white py-1 px-3 rounded-md'>
+              Add Items
+            </button>
+          </Link>
+        </section>
+      ) : (
+        <section className='flex justify-center my-5 px-3 overflow-x-auto relative rounded-2xl'>
+          <table className='shadow-md w-full'>
+            <tbody>
               <tr>
-                <td>
-                  {item?.doorType} {item?.design} {item?.assemblyType}
+                <td className='text-[#8894A0] cursor-pointer'>
+                  PRODUCT INFORMATION
                 </td>
-                <td>{item?.color}</td>
-                <td>{item?.series}</td>
-                <td>{item?.windCode}</td>
-                <td>{item?.category}</td>
-                <td>{item?.trackLift}</td>
+                <td className='text-[#8894A0]'>COLOR</td>
+                <td className='text-[#8894A0] flex items-center gap-2'>
+                  <span>SERIES</span>
+                  {toggle ? (
+                    <AiOutlineArrowDown
+                      onClick={() => {
+                        handleSeriesSort1();
+                        setToggle(!toggle);
+                      }}
+                      size='1rem'
+                      className='cursor-pointer'
+                    />
+                  ) : (
+                    <AiOutlineArrowUp
+                      onClick={() => {
+                        handleSeriesSort2();
+                        setToggle(!toggle);
+                      }}
+                      size='1rem'
+                      className='cursor-pointer'
+                    />
+                  )}
+                </td>
+                <td className='text-[#8894A0]'>WINDCODE</td>
+                <td className='text-[#8894A0]'>CATEGORY</td>
+                <td className='text-[#8894A0]'>TRACK LIFT</td>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <Link to='/create'>
-        <div className='absolute bottom-10 right-[6rem] cursor-pointer'>
-          <div className='bg-[#66332B] p-3 rounded-full shadow shadow-red-900'>
-            <ImPlus color='#fff' size='1.2rem' />
+              {filteredProducts?.map((item) => {
+                return (
+                  <tr>
+                    <td>
+                      {item?.doorType} {item?.design} {item?.assemblyType}
+                    </td>
+                    <td>{item?.color}</td>
+                    <td>{item?.series}</td>
+                    <td>{item?.windCode}</td>
+                    <td>{item?.category}</td>
+                    <td>{item?.trackLift}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div className='hidden md:block'>
+            <Link to='/create'>
+              <div className='absolute bottom-10 right-[6rem] cursor-pointer'>
+                <div className='bg-[#66332B] p-3 rounded-full shadow shadow-red-900'>
+                  <ImPlus color='#fff' size='1.2rem' />
+                </div>
+              </div>
+            </Link>
           </div>
-        </div>
-      </Link>
-    </section>
+        </section>
+      )}
+    </>
   );
 };
 

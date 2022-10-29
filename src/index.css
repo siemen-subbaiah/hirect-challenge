@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #f6f8fa;
+}
+
 table {
   border-spacing: 30px;
   font-size: 0.9rem;

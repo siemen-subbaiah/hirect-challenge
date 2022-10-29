@@ -14,7 +14,7 @@ const LayoutOptions = ({ fuck }) => {
         Layout Options
       </header>
       <div className='p-3'>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex md:flex-row flex-col md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Assembly Type
           </label>
@@ -22,18 +22,18 @@ const LayoutOptions = ({ fuck }) => {
             name='assemblyType'
             value={assemblyType}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Complete Door'>Complete Door</option>
             <option value='Half Door'>Half Door</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex md:flex-row flex-col md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Measure Size
           </label>
           <div>
-            <div className='flex items-center gap-[4.1rem] my-2'>
+            <div className='flex md:flex-row flex-col md:items-center md:gap-[4.1rem] my-2'>
               <label htmlFor='layout' className='text-[#34495E]'>
                 Width
               </label>
@@ -60,7 +60,7 @@ const LayoutOptions = ({ fuck }) => {
                 </select>
               </div>
             </div>
-            <div className='flex items-center gap-[3.79rem] my-2'>
+            <div className='flex md:flex-row flex-col md:items-center md:gap-[3.79rem] my-2'>
               <label htmlFor='layout' className='text-[#34495E]'>
                 Height
               </label>
@@ -89,7 +89,7 @@ const LayoutOptions = ({ fuck }) => {
             </div>
           </div>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex md:flex-row flex-col md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Windcode
           </label>
@@ -97,13 +97,13 @@ const LayoutOptions = ({ fuck }) => {
             name='windCode'
             value={windCode}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Windcode W1'>Windcode W1</option>
             <option value='Windcode W2'>Windcode W2</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex md:flex-row flex-col md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Design
           </label>
@@ -111,14 +111,14 @@ const LayoutOptions = ({ fuck }) => {
             name='design'
             value={design}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='CC'>CC</option>
             <option value='DD'>DD</option>
             <option value='PP'>PP</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex md:flex-row flex-col md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Color
           </label>
@@ -126,7 +126,7 @@ const LayoutOptions = ({ fuck }) => {
             name='color'
             value={color}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Dark Finish'>Dark Finish</option>
             <option value='Lite Finish'>Lite Finish</option>

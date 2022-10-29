@@ -13,7 +13,7 @@ const WindowOptions = () => {
         Window Options
       </header>
       <div className='p-3'>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Glass Type
           </label>
@@ -21,14 +21,14 @@ const WindowOptions = () => {
             name='glassType'
             value={glassType}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Solid (No Windows)'>Solid (No Windows)</option>
             <option value='Windows'>Windows</option>
           </select>
         </div>
 
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Section(S) Glazed
           </label>
@@ -36,13 +36,13 @@ const WindowOptions = () => {
             name='sectionGlazed'
             value={sectionGlazed}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Sections 4'>Sections 4</option>
             <option value='Sections 5'>Sections 5</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-3'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-3'>
           <label htmlFor='layout' className='text-[#34495E] w-52'>
             Framing
           </label>
@@ -50,7 +50,7 @@ const WindowOptions = () => {
             name='framing'
             value={framing}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Arch 1 Design'>Arch 1 Design</option>
             <option value='Arch 2 Design'>Arch 2 Design</option>

@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useMemo } from 'react';
 import { AppContext } from '../../context/AppState';
 
 const Summary = () => {
   const { cart } = useContext(AppContext);
 
-  const total = cart?.reduce(
-    (initialVal, item) => initialVal + item?.price * item?.qty,
-    0
-  );
+  const total = useMemo(() => {
+    return cart?.reduce(
+      (initialVal, item) => initialVal + item?.price * item?.qty,
+      0
+    );
+  }, [cart]);
 
   return (
     <section className='bg-white shadow-md rounded-sm p-3'>
@@ -31,7 +34,7 @@ const Summary = () => {
       <hr className='my-4' />
       <div className='flex items-center gap-3 justify-start my-2'>
         <input type='checkbox' name='tax' />
-        <label for='tax'>Apply Tax</label>
+        <label htmlFor='tax'>Apply Tax</label>
       </div>
       <p>
         (The 1% iStore discount is calculated into the total price for all doors

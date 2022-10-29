@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../components/Common';
 import { Table, Nodata, TableHeader } from '../components/Home';
 import { AppContext } from '../context/AppState';
@@ -60,6 +61,15 @@ const HomePage = () => {
         />
       ) : (
         <Nodata />
+      )}
+      {filteredProducts?.length >= 1 && (
+        <div className='px-4 md:hidden block'>
+          <Link to='/create'>
+            <button className='my-3 bg-[#66332B] text-white py-1 px-3 rounded-md'>
+              Add Items
+            </button>
+          </Link>
+        </div>
       )}
     </>
   );

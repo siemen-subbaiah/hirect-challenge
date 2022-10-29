@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Address, Fields, ProductCart, Summary } from '../components/Cart';
 import Header from '../components/Common/Header';
@@ -7,24 +7,26 @@ import { AppContext } from '../context/AppState';
 const CartPage = () => {
   const { cart, addProducts } = useContext(AppContext);
 
-  const total = cart?.reduce(
-    (initialVal, item) => {
-      initialVal.totalPrice = initialVal.totalPrice + item?.price * item?.qty;
-      initialVal.totalItem = initialVal.totalItem + item?.qty;
-      return initialVal;
-    },
-    {
-      totalPrice: 0,
-      totalItem: 0,
-    }
-  );
+  const total = useMemo(() => {
+    return cart?.reduce(
+      (initialVal, item) => {
+        initialVal.totalPrice = initialVal.totalPrice + item?.price * item?.qty;
+        initialVal.totalItem = initialVal.totalItem + item?.qty;
+        return initialVal;
+      },
+      {
+        totalPrice: 0,
+        totalItem: 0,
+      }
+    );
+  }, [cart]);
 
   return (
     <>
       <Header cart />
       <div className='mt-3 px-4 md:px-40 container mx-auto'>
         <ProductCart />
-        <div className='grid grid-cols-10 gap-3 place-content-stretch items-center'>
+        <div className='grid grid-cols-1 md:grid-cols-10 gap-3 place-content-stretch items-center'>
           <div className='col-span-5'>
             <Fields />
           </div>
@@ -33,11 +35,11 @@ const CartPage = () => {
           </div>
         </div>
         <Address />
-        <div className='bg-white p-3 shadow-md rounded-sm flex justify-between'>
+        <div className='bg-white p-3 shadow-md rounded-sm flex flex-col md:flex-row justify-between'>
           <div>
-            <p className='text-sm'>{total.totalItem} ITEM</p>
+            <p className='text-sm'>{total?.totalItem} ITEM</p>
             <h1 className='text-xl font-semibold'>
-              ${total.totalPrice + 70 + 490}
+              ${total?.totalPrice + 70 + 490}
             </h1>
           </div>
           <div className='flex gap-3 items-center'>

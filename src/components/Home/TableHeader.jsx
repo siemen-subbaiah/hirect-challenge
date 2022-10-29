@@ -4,8 +4,8 @@ import { BiFilter } from 'react-icons/bi';
 
 const TableHeader = ({ term, tableIndex, setTableIndex, handleSearch }) => {
   return (
-    <section className='p-4 flex items-center justify-between'>
-      <div className='flex items-center gap-5'>
+    <section className='p-4 flex flex-col md:flex-row md:items-center justify-between'>
+      <div className='flex items-center gap-5 md:mb-0 mb-4'>
         <h1
           onClick={() => setTableIndex(0)}
           className={`${

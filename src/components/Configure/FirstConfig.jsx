@@ -10,7 +10,7 @@ const FirstConfig = ({ setConfigNumb }) => {
   return (
     <div className='bg-white shadow-sm rounded-md mt-3 p-3 h-[80vh] relative'>
       <form>
-        <div className='flex items-center justify-around my-5'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-5'>
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Select Category
           </label>
@@ -18,13 +18,13 @@ const FirstConfig = ({ setConfigNumb }) => {
             name='category'
             value={category}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Residential Door'>Residential Door</option>
             <option value='Industrial Door'>Industrial Door</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-5'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-5'>
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Select Series
           </label>
@@ -32,7 +32,7 @@ const FirstConfig = ({ setConfigNumb }) => {
             name='series'
             value={series}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='Canyon Ridge Collection'>
               Canyon Ridge Collection
@@ -41,7 +41,7 @@ const FirstConfig = ({ setConfigNumb }) => {
             <option value='Siemen Collections'>Siemen Collections</option>
           </select>
         </div>
-        <div className='flex items-center justify-around my-5'>
+        <div className='flex flex-col md:flex-row md:items-center justify-around my-5'>
           <label htmlFor='category' className='text-[#34495E] w-52'>
             Door Type
           </label>
@@ -49,7 +49,7 @@ const FirstConfig = ({ setConfigNumb }) => {
             name='doorType'
             value={doorType}
             onChange={updateDropDowns}
-            className='border w-1/3 p-2 rounded-sm'
+            className='border md:w-1/3 p-2 rounded-sm'
           >
             <option value='CAN212'>CAN212</option>
             <option value='CAN341'>CAN341</option>

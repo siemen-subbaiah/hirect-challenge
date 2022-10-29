@@ -28,8 +28,12 @@ export const initialState = {
     goldBarGurantee: false,
     extras: '5 extra stuffs',
   },
-  cart: [],
-  products: [],
+  cart: localStorage.getItem('cart')
+    ? JSON.parse(localStorage.getItem('cart'))
+    : [],
+  products: localStorage.getItem('products')
+    ? JSON.parse(localStorage.getItem('products'))
+    : [],
 };
 
 export const reducer = (state, action) => {

@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { useEffect } from 'react';
 import { createContext } from 'react';
 import { initialState, reducer } from './AppReducer';
 
@@ -6,6 +7,11 @@ export const AppContext = createContext();
 
 const AppState = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+    localStorage.setItem('products', JSON.stringify(state.products));
+  }, [state.cart, state.products]);
 
   const addToCart = () => {
     dispatch({

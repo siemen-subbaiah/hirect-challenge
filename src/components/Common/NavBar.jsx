@@ -16,9 +16,17 @@ const NavBar = () => {
         </div>
       </Link>
       <div className='flex gap-7 items-center mr-5 cursor-pointer'>
-        <MdApps color='#525960' size='1.7rem' />
-        <MdNotifications color='#525960' size='1.5rem' />
-        <FaQuestionCircle color='#525960' size='1.4rem' />
+        <MdApps color='#525960' size='1.7rem' className='hidden md:block' />
+        <MdNotifications
+          color='#525960'
+          size='1.5rem'
+          className='hidden md:block'
+        />
+        <FaQuestionCircle
+          color='#525960'
+          size='1.4rem'
+          className='hidden md:block'
+        />
         <img src={avatar} height={28} width={28} alt='avatar' />
       </div>
     </nav>
